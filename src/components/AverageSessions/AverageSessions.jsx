@@ -50,7 +50,7 @@ const AverageSessions = () => {
   return (
 
     <div className={style.chartaverageSessions}>
-      <p className="chartaverage-sessions-title">
+      <p className={style.chartaverageTitle}>
         Durée moyenne des <br />
         sessions
       </p>

@@ -1,0 +1,27 @@
+.card{
+    background-color: #FBFBFB;
+    width: 258px;
+    height: 124px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+    gap: 2rem;
+}
+.iconImg{
+    width: 60px;
+    height: 60px;
+}
+.cardContent{
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction: column;
+    background-color: aqua;
+    height: 60px;
+}
+.value{
+    font-size: 20px;
+    font-weight: 700;
+}
