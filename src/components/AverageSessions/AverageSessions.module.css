@@ -1,0 +1,21 @@
+.chartaverageSessions{
+    background-color: #FF0000;
+    color:rgba(255,255,255,0.6);
+    width: 258px;
+    height: 263px;
+    padding-left: 5px;
+    padding-bottom: 2rem;
+    /* padding: 1rem 0 1rem 5px; */
+    border-radius: 10px;
+}
+p{
+    font-size: 15px;
+    padding-left: 1.5rem;
+    padding-bottom: 1.5rem;
+    /* margin-top: 2rem; */
+}
+.sessionContent{
+    width: 100%;
+    height: 100%;
+    /* padding: 1rem; */
+}

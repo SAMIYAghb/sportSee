@@ -1,0 +1,14 @@
+.mainContent{
+    position: absolute;
+    top: 91px;
+    left: 117px;
+}
+.container{
+    width: 1240px;
+    margin: 3rem;
+}
+.heading{
+    background-color: aqua;
+    align-items: center;
+    justify-content: center;
+}

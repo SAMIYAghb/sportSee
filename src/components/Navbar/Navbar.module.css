@@ -1,0 +1,29 @@
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1rem 2rem;
+    background: #000;
+    height: 91px;
+}
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    gap: 15rem;
+}
+li{
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 500;
+    
+    list-style: none;
+}
+li a{
+    text-decoration: none;
+    color: #fff;
+}
+.logo{
+    width: 109.3px;
+}

@@ -1,0 +1,27 @@
+.verticalNavigator{
+    background-color: #000;
+    width: 117px;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column; 
+    
+}
+.iconsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.icon{
+    width: 64px;
+    
+}
+.copyright{
+    color: #fff;
+    transform: rotate(270deg); /* Équivalent à rotateZ(270deg) */
+    width:max-content;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+}
