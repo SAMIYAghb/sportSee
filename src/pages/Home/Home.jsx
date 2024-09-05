@@ -3,9 +3,13 @@ import '../../App.css'
 import AverageSessions from '../../components/AverageSessions/AverageSessions'
 import Card from '../../components/Card/Card'
 import calorie from '../../assets/icon-calorie.png'
+import proteine from '../../assets/icon-protein.png'
+import glucide from '../../assets/icon-carbohydrate.png'
+import lipide from '../../assets/icon-lipid.png'
 import DailyActivity from '../../components/DailyActivity/DailyActivity'
 import Score from '../../components/Score/Score'
 import Intensity from './../../components/Intensity/Intensity ';
+
 const Home = () => {
   return (
     <div>
@@ -35,19 +39,19 @@ const Home = () => {
                   name="calorie ghtfft"
                 />
                 <Card
-                  icon={calorie}
+                  icon={proteine}
                   value="200 klmml"
                   iconTitle="calorie"
                   name="calorie ghtfft"
                 />
                 <Card
-                  icon={calorie}
+                  icon={glucide}
                   value="200 klmml"
                   iconTitle="calorie"
                   name="calorie ghtfft"
                 />
                 <Card
-                  icon={calorie}
+                  icon={lipide}
                   value="200 klmml"
                   iconTitle="calorie"
                   name="calorie ghtfft"

@@ -38,4 +38,9 @@ li{
 li a{
     text-decoration: none;
     color: #fff;
+    transition: 0.3s ease;
+}
+li a:hover{
+    color: #E60000;
+    border-bottom: 3px solid #E60000;
 }
