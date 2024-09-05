@@ -23,7 +23,9 @@
 }
 main{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: center;
+    gap: 6rem;
 }
 .squareCharts{
     display: flex;

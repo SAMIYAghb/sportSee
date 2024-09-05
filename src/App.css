@@ -5,7 +5,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-/* .container {
-  width: 1240px;
-  margin: 0 auto;
-} */
+body{
+  overflow-x: hidden;
+}
