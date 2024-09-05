@@ -3,4 +3,32 @@
     width: 835px;
     height: 320px;
     border-radius: 10px;
+    padding: 1.5rem;
+}
+.titles, .indicators{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    /* padding: 1rem; */
+}
+.poid, .calorie{
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+}
+.poid::before, .calorie::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;   
+    left: -1rem;
+    top: 40%;
+}
+.poid::before{
+    background-color: #282D30;
+}
+.calorie::before{
+    background: #E60000;
 }

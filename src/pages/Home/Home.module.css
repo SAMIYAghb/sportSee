@@ -6,13 +6,20 @@
 }
 .container{
     width: 1240px;
-    margin: 3rem;
+    margin: 3rem; 
 }
 .heading{
-    background-color: aqua;
     align-items: center;
     justify-content: center;
     margin-bottom: 3.5rem;
+}
+.heading h1{
+    padding-bottom: 2rem;
+}
+.heading {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
 }
 main{
     display: flex;
