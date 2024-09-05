@@ -7,12 +7,14 @@ import barbell from '../../assets/picto-bodybuilding.png'
 const Sidebar = () => {
   return (
     <div className={style.verticalNavigator}>
+      
       <div className={style.iconsContainer} >
         <img src={yoga} alt="yoga" className={style.icon} />
         <img src={swin} alt="swin" className={style.icon}  />
         <img src={bicycle} alt="bicycle" className={style.icon}  />
         <img src={barbell} alt="barbell" className={style.icon}  />
       </div>
+
       <p className={style.copyright}>Copyright, SportSee 2020</p>
     </div>
   )

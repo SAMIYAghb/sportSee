@@ -1,8 +1,11 @@
+// import { UserContext } from '../../context/UserContext';
 import style from './AverageSessions.module.css'
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+// import { useContext } from 'react';
 
 
 const AverageSessions = () => {
+  // const { userData, error, fetchUserData } = useContext(UserContext);
   const data = [
     {
       name: 'L',
@@ -56,16 +59,19 @@ const AverageSessions = () => {
       </p>
       <ResponsiveContainer width="90%" height="80%">
         <LineChart width={300} height={100} data={data}>
-          {/* <XAxis
+          <XAxis
             dataKey="name"
             axisLine={false}
             tickLine={false}
+
+            // padding={{ bottom: 100 }}
+
             tick={{
               fill: 'rgba(255,255,255,0.6)',
               fontSize: '0.75rem',
             }}
             tickMargin={20}
-          /> */}
+          /> 
           {/* <YAxis
             hide="true"
           /> */}

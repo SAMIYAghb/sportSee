@@ -1,21 +1,27 @@
 .verticalNavigator{
+    height: 100vh;
     background-color: #000;
     width: 117px;
-    height: 100vh;
+    /* height: calc(100vh - 91px); */
+    position: fixed;
+    /* top: 91px; */
+    top: 0;
+    left: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column; 
-    
+    gap: 7rem;
 }
 .iconsContainer{
+    
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 1.5rem;
 }
 .icon{
-    width: 64px;
-    
+    width: 64px;   
 }
 .copyright{
     color: #fff;

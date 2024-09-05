@@ -6,24 +6,36 @@ header{
     padding:1rem 2rem;
     background: #000;
     height: 91px;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+.logo{
+    width: 57.2px;
+}
+span{
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #E60000;
+    padding-left: 10px;
+}
+nav{
+    width: calc(100% - 109.3px);
 }
 ul{
     display: flex;
     align-items: center;
     justify-content: space-around; 
-    gap: 15rem;
+    /* gap: 15rem; */
 }
 li{
     font-size: 24px;
     line-height: 24px;
     font-weight: 500;
-    
     list-style: none;
 }
 li a{
     text-decoration: none;
     color: #fff;
-}
-.logo{
-    width: 109.3px;
 }
