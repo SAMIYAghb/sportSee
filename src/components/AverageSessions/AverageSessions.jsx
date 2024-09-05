@@ -58,14 +58,18 @@ const AverageSessions = () => {
         sessions
       </p>
       <ResponsiveContainer width="90%" height="80%">
-        <LineChart width={300} height={100} data={data}>
+        <LineChart 
+        width={300} 
+        height={100} 
+        data={data}
+        margin={{ top: 20, right: 0, bottom: 20, left: 0 }}
+        >
           <XAxis
             dataKey="name"
             axisLine={false}
             tickLine={false}
 
-            // padding={{ bottom: 100 }}
-
+            
             tick={{
               fill: 'rgba(255,255,255,0.6)',
               fontSize: '0.75rem',
