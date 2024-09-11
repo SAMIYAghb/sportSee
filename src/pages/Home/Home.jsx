@@ -1,15 +1,15 @@
-import style from './Home.module.css'
 import '../../App.css'
+import style from './Home.module.css'
 // import AverageSessions from '../../components/AverageSessions/AverageSessions'
-import Card from '../../components/Card/Card'
 import calorie from '../../assets/icon-calorie.png'
-import proteine from '../../assets/icon-protein.png'
 import glucide from '../../assets/icon-carbohydrate.png'
 import lipide from '../../assets/icon-lipid.png'
+import proteine from '../../assets/icon-protein.png'
+import Card from '../../components/Card/Card'
 // import DailyActivity from '../../components/DailyActivity/DailyActivity'
-import Score from '../../components/Score/Score'
-import Intensity from '../../components/Intensity/Intensity';
 import Hello from '../../components/Hello/Hello'
+import Performance from '../../components/Performance/Performance'
+import Score from '../../components/Score/Score'
 
 const Home = () => {
   return (
@@ -25,7 +25,7 @@ const Home = () => {
               </div>
               <div className={style.squareCharts}>
                 {/* <AverageSessions /> */}
-                <Intensity />
+                <Performance />
                 <Score />
               </div>
             </div> 

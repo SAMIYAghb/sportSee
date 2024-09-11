@@ -1,11 +1,9 @@
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from 'recharts';
-import style from './Intensity.module.css';
-import { useContext, useEffect, useState } from 'react';
-import { MockDataContext } from '../../context/MockDataContext';
-import { getUserPerformanceFromApi } from '../../service/apiUser';
-import { getUserPerformanceFromMock } from '../../service/mockUser'
+import style from './Performance.module.css';
+import usePerformance from '../../hooks/usePerformance';
 
-const Intensity  = () => {
+const Performance  = () => {
+  const performance = usePerformance();
   // const data = [
   //   {
   //     subject: 'Intensité',
@@ -44,11 +42,8 @@ const Intensity  = () => {
   //     fullMark: 150,
   //   },
   // ];
-  const userId = 12; 
-  const { useMock } = useContext(MockDataContext);
-  const [performance, setPerformance] =  useState();
-  // const [kinds, setKinds] =  useState();
-  // const [values, setValues] =  useState();
+ 
+
 
   const kinds = [
     "Intensité",
@@ -59,28 +54,6 @@ const Intensity  = () => {
     "Vitesse",
   ];
   
-
-  useEffect(() => {
-    const fetchData = async () => {
-      let data;
-      if (useMock) {
-        data = getUserPerformanceFromMock(userId);
-        // console.log(data)
-      } else {
-        data = await getUserPerformanceFromApi(userId);
-        // console.log(data)
-      }
-      setPerformance(data);
-      
-    };
-
-    // console.log(performance);
-    fetchData();
-
-
-  }, [useMock, userId]);
-
-
 
 // Transforms performance data into a format suitable for RadarChart.
 const performanceData = kinds.map((kind, index) => {
@@ -122,4 +95,4 @@ const performanceData = kinds.map((kind, index) => {
   )
 }
 
-export default Intensity 
+export default Performance 
