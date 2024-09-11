@@ -8,7 +8,7 @@ import glucide from '../../assets/icon-carbohydrate.png'
 import lipide from '../../assets/icon-lipid.png'
 // import DailyActivity from '../../components/DailyActivity/DailyActivity'
 import Score from '../../components/Score/Score'
-import Intensity from './../../components/Intensity/Intensity ';
+import Intensity from '../../components/Intensity/Intensity';
 import Hello from '../../components/Hello/Hello'
 
 const Home = () => {

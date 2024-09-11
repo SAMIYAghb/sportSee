@@ -185,7 +185,7 @@ export const userSessions = [
 ]
 
 
-export const usePerformance = [
+export const userPerformance = [
     {
         userId: 12,
         kind: {

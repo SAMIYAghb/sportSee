@@ -16,9 +16,9 @@ const Hello = () => {
           let data;
           if (useMock) {
             data = getUserDataFromMock(userId);
-            console.log(data)
+            // console.log(data)
           } else {
-            console.log(data)
+            // console.log(data)
             data = await getUserDataFromApi(userId);
           }
           setUserData(data);

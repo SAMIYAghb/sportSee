@@ -1,5 +1,5 @@
 
-import { users } from './../data/mockApi';
+import { userPerformance, users } from './../data/mockApi';
 
 /** 
  * 
@@ -20,3 +20,27 @@ export const getUserDataFromMock = (userId) => {
       console.error(error);
     }
   };
+
+
+
+
+
+
+  export const getUserPerformanceFromMock = (userId) => {
+    try {
+      const mockPerformance = userPerformance.find((performance) => performance.data.id === Number(userId));
+      console.log(mockPerformance)
+  
+      if (mockPerformance) {
+        return mockPerformance.data;
+      } else {
+        throw new Error("Utilisateur non trouvé dans les données mock");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
+
+  
