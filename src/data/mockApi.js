@@ -1,4 +1,4 @@
-export const USER_MAIN_DATA = [
+export const users = [
     {
         id: 12,
         userInfos: {
@@ -31,7 +31,7 @@ export const USER_MAIN_DATA = [
     }
 ]
 
-export const USER_ACTIVITY = [
+export const userActivity = [
     {
         userId: 12,
         sessions: [
@@ -115,7 +115,7 @@ export const USER_ACTIVITY = [
 ]
 
 
-export const USER_AVERAGE_SESSIONS = [
+export const userSessions = [
     {
         userId: 12,
         sessions: [
@@ -185,7 +185,7 @@ export const USER_AVERAGE_SESSIONS = [
 ]
 
 
-export const USER_PERFORMANCE = [
+export const usePerformance = [
     {
         userId: 12,
         kind: {

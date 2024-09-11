@@ -7,19 +7,27 @@
 .container{
     width: 1240px;
     margin: 3rem; 
+    padding:0 2rem;
+    /* background-color: blue; */
 }
 .heading{
     align-items: center;
     justify-content: center;
     margin-bottom: 3.5rem;
-}
-.heading h1{
-    padding-bottom: 2rem;
-}
-.heading {
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
+}
+.heading h1{
+    font-size: 44px;
+    padding-bottom: 2rem;
+}
+.name{
+    font-size: 44px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #E60000;
+    padding-left: 10px;
 }
 main{
     display: flex;

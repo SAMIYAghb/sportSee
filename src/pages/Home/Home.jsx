@@ -1,14 +1,15 @@
 import style from './Home.module.css'
 import '../../App.css'
-import AverageSessions from '../../components/AverageSessions/AverageSessions'
+// import AverageSessions from '../../components/AverageSessions/AverageSessions'
 import Card from '../../components/Card/Card'
 import calorie from '../../assets/icon-calorie.png'
 import proteine from '../../assets/icon-protein.png'
 import glucide from '../../assets/icon-carbohydrate.png'
 import lipide from '../../assets/icon-lipid.png'
-import DailyActivity from '../../components/DailyActivity/DailyActivity'
+// import DailyActivity from '../../components/DailyActivity/DailyActivity'
 import Score from '../../components/Score/Score'
 import Intensity from './../../components/Intensity/Intensity ';
+import Hello from '../../components/Hello/Hello'
 
 const Home = () => {
   return (
@@ -16,17 +17,14 @@ const Home = () => {
 
       <div className={style.mainContent}>
         <div className={style.container}>
-          <div className={style.heading}>
-            <h1>Bonjour <span>Thomas</span> </h1>
-            <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-          </div>
+          <Hello/>
           <main>
             <div className={style.left}>
               <div className={style.rectangleeChart}>
-                <DailyActivity />
+                {/* <DailyActivity /> */}
               </div>
               <div className={style.squareCharts}>
-                <AverageSessions />
+                {/* <AverageSessions /> */}
                 <Intensity />
                 <Score />
               </div>
