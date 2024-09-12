@@ -25,3 +25,15 @@ export const getUserDataFromApi = async (userId) => {
     }
   };
 
+  export const getUserAverageSessionFromApi = async (userId) => {
+    try {
+      const response = await axios.get(`http://localhost:3000/user/${userId}/average-sessions`);
+      // console.log(response.data)
+      // console.log(response.data.data)
+
+      return response.data.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+

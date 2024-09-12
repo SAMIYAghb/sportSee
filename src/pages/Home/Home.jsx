@@ -1,6 +1,6 @@
 import '../../App.css'
 import style from './Home.module.css'
-// import AverageSessions from '../../components/AverageSessions/AverageSessions'
+import AverageSessions from '../../components/AverageSessions/AverageSessions'
 import calorie from '../../assets/icon-calorie.png'
 import glucide from '../../assets/icon-carbohydrate.png'
 import lipide from '../../assets/icon-lipid.png'
@@ -10,11 +10,17 @@ import Card from '../../components/Card/Card'
 import Hello from '../../components/Hello/Hello'
 import Performance from '../../components/Performance/Performance'
 import Score from '../../components/Score/Score'
+import useUserData from '../../hooks/useUserData'
+
 
 const Home = () => {
+  const useData = useUserData();
+  // console.log(useData.keyData);
+  const values = useData.keyData;
+  console.log(values)
+
   return (
     <div>
-
       <div className={style.mainContent}>
         <div className={style.container}>
           <Hello/>
@@ -24,7 +30,7 @@ const Home = () => {
                 {/* <DailyActivity /> */}
               </div>
               <div className={style.squareCharts}>
-                {/* <AverageSessions /> */}
+                <AverageSessions />
                 <Performance />
                 <Score />
               </div>
@@ -32,29 +38,28 @@ const Home = () => {
             <div className={style.right}>
                 <Card
                   icon={calorie}
-                  value="200 klmml"
-                  iconTitle="calorie"
-                  name="calorie ghtfft"
+                  value={`${values.calorieCount} kCal`}
+                  iconTitle="Calories"
+                  name="Calories"
                 />
                 <Card
                   icon={proteine}
-                  value="200 klmml"
-                  iconTitle="calorie"
-                  name="calorie ghtfft"
+                  value={`${values.proteinCount} g`}
+                  iconTitle="Proteines"
+                  name="Proteines"
                 />
                 <Card
                   icon={glucide}
-                  value="200 klmml"
-                  iconTitle="calorie"
-                  name="calorie ghtfft"
+                  value={`${values.carbohydrateCount} g`}
+                  iconTitle="Glucides"
+                  name="Glucides"
                 />
                 <Card
                   icon={lipide}
-                  value="200 klmml"
-                  iconTitle="calorie"
-                  name="calorie ghtfft"
+                  value={`${values.lipidCount} g`}
+                  iconTitle="Lipides"
+                  name="Lipides"
                 />
-
             </div>
           </main>
         </div> 

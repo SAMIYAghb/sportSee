@@ -8,7 +8,7 @@ const useScore = () => {
   // const { userId } = useParams();
   const userId = 12;
   const { useMock } = useContext(MockDataContext);
-  const [score, setScore] =  useState();
+  const [score, setScore] =  useState(0);
 
 
   useEffect(() => {
@@ -21,7 +21,15 @@ const useScore = () => {
         data = await getUserDataFromApi(userId);
         // console.log(data)
       }
-      setScore(data.todayScore);
+
+      const todayScore = data?.todayScore;
+
+      // Validate todayScore and ensure it's a number
+      if (typeof todayScore === 'number' && !isNaN(todayScore)) {
+        setScore(todayScore);
+      } else {
+        setScore(0); // Set fallback value if todayScore is invalid
+      }
       
     };
 
