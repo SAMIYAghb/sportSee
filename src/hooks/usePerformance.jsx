@@ -25,17 +25,11 @@ const usePerformance = () => {
           }
           setPerformance(data);
           
-        };
-    
+        };   
         // console.log(performance);
         fetchData();
-    
-    
       }, [useMock, userId]);
-
-
-      return performance;
-    
+      return performance;   
 }
 
 export default usePerformance

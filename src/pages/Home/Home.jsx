@@ -6,7 +6,7 @@ import glucide from '../../assets/icon-carbohydrate.png'
 import lipide from '../../assets/icon-lipid.png'
 import proteine from '../../assets/icon-protein.png'
 import Card from '../../components/Card/Card'
-// import DailyActivity from '../../components/DailyActivity/DailyActivity'
+import DailyActivity from '../../components/DailyActivity/DailyActivity'
 import Hello from '../../components/Hello/Hello'
 import Performance from '../../components/Performance/Performance'
 import Score from '../../components/Score/Score'
@@ -16,8 +16,13 @@ import useUserData from '../../hooks/useUserData'
 const Home = () => {
   const useData = useUserData();
   // console.log(useData.keyData);
-  const values = useData.keyData;
-  console.log(values)
+  const values = useData?.keyData;
+  // console.log(values);
+
+  // Check if values is defined before rendering
+  if (!values) {
+    return <div>Loading...</div>; 
+  }
 
   return (
     <div>
@@ -27,7 +32,7 @@ const Home = () => {
           <main>
             <div className={style.left}>
               <div className={style.rectangleeChart}>
-                {/* <DailyActivity /> */}
+                <DailyActivity />
               </div>
               <div className={style.squareCharts}>
                 <AverageSessions />

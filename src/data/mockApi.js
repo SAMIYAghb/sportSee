@@ -263,10 +263,4 @@ export const userPerformance = [
 ]
 
 
-// module.exports = {
-//     USER_MAIN_DATA,
-//     USER_ACTIVITY,
-//     USER_AVERAGE_SESSIONS,
-//     USER_PERFORMANCE
-// }
 
