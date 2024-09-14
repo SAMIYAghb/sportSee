@@ -120,6 +120,7 @@
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import style from './DailyActivity.module.css';
 import useDailyActivity from './../../hooks/useDailyActivity';
+import { PropTypes } from 'prop-types';
 
 
 
@@ -146,6 +147,14 @@ const DailyActivity = () => {
           );
         }
         return null;
+      };
+      CustomTooltip.propTypes = {
+        active: PropTypes.bool,
+        payload: PropTypes.arrayOf(
+          PropTypes.shape({
+            value: PropTypes.number,
+          })
+        ),
       };
 
     if (!dailyActivity) {
