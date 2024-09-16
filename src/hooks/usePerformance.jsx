@@ -27,6 +27,8 @@ const usePerformance = () => {
           
         };   
         // console.log(performance);
+        // console.log(performance?.kind);
+        // console.log(performance?.data);
         fetchData();
       }, [useMock, userId]);
       return performance;   

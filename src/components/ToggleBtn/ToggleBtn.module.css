@@ -14,7 +14,9 @@
     color: white;
     font-weight: bold;
   }
-  
+  /* .toggle:hover{
+    width: 60px;
+} */
   .toggle.on {
     background-color: #4caf50;
   }

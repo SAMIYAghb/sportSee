@@ -5,22 +5,29 @@ import usePerformance from '../../hooks/usePerformance';
 const Performance = () => {
   const performance = usePerformance();
 
-  const kinds = [
-    "Intensité",
-    "Cardio",
-    "Energie",
-    "Endurance",
-    "Force",
-    "Vitesse",
-  ];
+  // const kinds = performance?.kind;
+  const data = performance?.data;
+  // console.log(performance?.kind, performance?.data,'from performance')
 
-  // Transforms performance data into a format suitable for RadarChart.
-  const performanceData = kinds.map((kind, index) => {
-    return { kind, value: performance?.data?.[index]?.value };
-  });
+  const kindTranslations = {
+    1: 'cardio',
+    2: 'énergie',
+    3: 'endurance',
+    4: 'force',
+    5: 'vitesse',
+    6: 'intensité'
+  }; 
+// Map the kind description to the data
+const transformedData = data?.map(item => {
+  return {
+    ...item,
+    // kind: kinds?.[item.kind] // Replace numeric kind with description
+    kind: kindTranslations[item.kind] 
+  };
+})?.reverse() || [];// Fallback to empty array if data is undefined
 
-  //+add l'ordre des kind est faux
-  // if (!performance || !kinds || !values) {
+// console.log(transformedData);
+ 
   if (!performance) {
     return <div>Loading...</div>;
   }
@@ -29,7 +36,7 @@ const Performance = () => {
     <div className={style.intensity}>
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart cx="50%" cy="50%" outerRadius="70%"
-          data={performanceData}>
+          data={transformedData}>
 
           <PolarGrid />
 
