@@ -51,7 +51,9 @@ const AverageSessions = () => {
               right: 0 }}
             minTickGap={1}
           />
-          <Tooltip content={<TooltipWithMinutes cursor={false} />} cursor={false} />
+          <Tooltip content={<TooltipWithMinutes 
+          />} 
+          cursor={false} />
           {/* <Tooltip content={<CustomToolTip />} cursor={false} /> */}
           <YAxis
             axisLine={false}
@@ -63,7 +65,6 @@ const AverageSessions = () => {
           <Line
             type="natural"
             dataKey="sessionLength"
-            // stroke="#FFF"
             stroke="url(#colorUv)"
             strokeWidth={2}
             dot={false}
