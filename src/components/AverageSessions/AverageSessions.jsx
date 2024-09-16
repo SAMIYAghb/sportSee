@@ -3,6 +3,7 @@ import useSession from '../../hooks/useSession';
 import style from './AverageSessions.module.css'
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 // import { useContext } from 'react';
+import CustomToolTip from './CustumToolip';
 
 
 const AverageSessions = () => {
@@ -20,7 +21,7 @@ const AverageSessions = () => {
           margin={{
             top: 0,
             right: 0,
-            left: 0,
+            left: -10,
             bottom: 50,
           }}
         >
@@ -34,6 +35,7 @@ const AverageSessions = () => {
             padding={{ left: 10, right: 0 }}
             minTickGap={1}
           />
+          <Tooltip content={<CustomToolTip />} cursor={false} />
           <YAxis
             axisLine={false}
             tickLine={false}
@@ -44,46 +46,51 @@ const AverageSessions = () => {
           <Line
             type="natural"
             dataKey="sessionLength"
-            stroke="#FFF"
-            strokeWidth={1}
+            // stroke="#FFF"
+            stroke="url(#colorUv)"
+            strokeWidth={2}
             dot={false}
             activeDot={{
               fill: "#FFF",
-              r: 5,
+              r: 4,
               strokeWidth: 10,
               strokeOpacity: 0.4,
             }}
           />
-        </LineChart>
-        {/* <LineChart 
-        width={300} 
-        height={100} 
-        data={data}
-        margin={{ top: 20, right: 0, bottom: 20, left: 0 }}
-        >
-          <XAxis
-            dataKey="name"
-            axisLine={false}
-            tickLine={false}
 
-            
-            tick={{
-              fill: 'rgba(255,255,255,0.6)',
-              fontSize: '0.75rem',
-            }}
-            tickMargin={20}
-          /> 
-          <YAxis
-            hide="true"
-          />
-          <Tooltip />
-          <Line
-            type="monotone"
-            dataKey="pv"
-            stroke='rgba(255,255,255,0.6)'
-            strokeWidth={2}
-            dot={false} />
-        </LineChart> */}
+<defs>
+						<linearGradient
+							id="colorUv"
+							x1="0%"
+							y1="0"
+							x2="100%"
+							y2="0"
+						>
+							<stop
+								offset="0%"
+								stopColor="rgba(255, 255, 255, 0.3)"
+							/>
+							<stop
+								offset="20%"
+								stopColor="rgba(255, 255, 255, 0.4)"
+							/>
+							<stop
+								offset="40%"
+								stopColor="rgba(255, 255, 255, 0.5)"
+							/>
+							<stop
+								offset="60%"
+								stopColor="rgba(255, 255, 255, 0.6)"
+							/>
+							<stop
+								offset="100%"
+								stopColor="rgba(255, 255, 255, 1)"
+							/>
+						</linearGradient>
+					</defs>
+
+        </LineChart>
+
 
 
       </ResponsiveContainer>

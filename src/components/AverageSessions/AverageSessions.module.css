@@ -17,3 +17,10 @@
     /* height: 100%; */
     /* padding: 1rem; */
 }
+.tooltip{
+    padding: 4px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 0.6rem;
+    font-weight: 500;
+}
