@@ -3,6 +3,7 @@ import yoga from '../../assets/picto-meditation.png'
 import swin from '../../assets/picto-swimming.png'
 import bicycle from '../../assets/picto-cycling.png'
 import barbell from '../../assets/picto-bodybuilding.png'
+import ToggleBtn from '../ToggleBtn/ToggleBtn'
 
 const Sidebar = () => {
   return (
@@ -13,6 +14,8 @@ const Sidebar = () => {
         <img src={swin} alt="swin" className={style.icon}  />
         <img src={bicycle} alt="bicycle" className={style.icon}  />
         <img src={barbell} alt="barbell" className={style.icon}  />
+
+        <ToggleBtn/>
       </div>
 
       <p className={style.copyright}>Copyright, SportSee 2020</p>

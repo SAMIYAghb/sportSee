@@ -1,0 +1,54 @@
+.toggle {
+    width: 65px;
+    height: 35px;
+    background-color: #ccc;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    /* font-size: 14px; */
+    color: white;
+    font-weight: bold;
+  }
+  
+  .toggle.on {
+    background-color: #4caf50;
+  }
+  
+  .circle {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    transition: left 0.3s ease;
+  }
+  
+  .toggle.on .circle {
+    left: 35px;
+  }
+  
+  .number {
+    font-size: 18px;
+    position: relative;
+    z-index: 1; /* Ensure the number is above the circle */
+    transition: transform 0.3s ease;
+padding: 25px;
+  }
+  
+  .toggle.on .number {
+    font-size: 18px;
+    transform: translateX(-25px); /* Move number to the left when toggle is on */
+  }
+  
+  .toggle.off .number {
+    transform: translateX(25px); /* Move number to the right when toggle is off */
+  }
+  

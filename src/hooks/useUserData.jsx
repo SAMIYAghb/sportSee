@@ -16,7 +16,8 @@ const useUserData = () => {
         // console.log(data)
       } else {
         data = await getUserDataFromApi(userId);
-        // console.log(data)
+        // console.log(data.userInfos)
+        // console.log(data.userInfos.firstName)
       }
 
       setUserData(data)
