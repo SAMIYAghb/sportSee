@@ -4,7 +4,7 @@ import { getDailyActivityFromMock } from "../service/mockUser";
 import { getDailyActivityFromApi } from "../service/apiUser";
 
 const useDailyActivity = () => {
-    const userId = 12;
+    const userId = 18;
     const { useMock } = useContext(MockDataContext);
     const [dailyActivity, setDailyActivity] = useState();
     // const [weights, setWeights] = useState([]);

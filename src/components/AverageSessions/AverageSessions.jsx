@@ -14,7 +14,7 @@ const AverageSessions = () => {
 
   const TooltipWithMinutes = ({ active, payload }) => {
     const formatters = [(value) => `${value} min`];
-    return <CustomToolTip active={active} payload={payload} formatters={formatters} />;
+    return <CustomToolTip active={active} payload={payload} formatters={formatters} tooltipClass={style.whiteTooltip}/>;
   };
   TooltipWithMinutes.propTypes = {
     active: PropTypes.bool,
@@ -42,18 +42,23 @@ const AverageSessions = () => {
             tickLine={false}
             tickMargin={30}
             tickCount={7}
-            tick={{ fill: "#fff", opacity: "0.4", fontSize: 10 }}
-            padding={{ left: 10, right: 0 }}
+            tick={{ 
+              fill: "#fff",
+              opacity: "0.4", 
+              fontSize: 10 }}
+            padding={{ 
+              left: 10, 
+              right: 0 }}
             minTickGap={1}
           />
-          <Tooltip content={<TooltipWithMinutes tooltipClass={style.whiteTooltip} cursor={false} />} cursor={false} />
+          <Tooltip content={<TooltipWithMinutes cursor={false} />} cursor={false} />
           {/* <Tooltip content={<CustomToolTip />} cursor={false} /> */}
           <YAxis
             axisLine={false}
             tickLine={false}
             type="number"
             domain={["dataMin", "dataMax + 10"]}
-            hide="true"
+            hide={true} 
           />
           <Line
             type="natural"

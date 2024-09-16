@@ -58,17 +58,18 @@ const DailyActivity = () => {
             bottom: 20,
           }}
         >
-          <CartesianGrid vertical={false} strokeDasharray="3 3" />
+          <CartesianGrid vertical={false} strokeDasharray="3" />
           <XAxis
+            dataKey="day"
             axisLine={true}
             stroke="#9B9EAC"
             tickLine={false}
             tickMargin={20}
             tickCount={7}
-            dataKey="day"
+            
           />
           <YAxis
-            tickCount={4}
+            tickCount={3}
             yAxisId="kilogram"
             type="number"
             orientation="right"
@@ -76,16 +77,14 @@ const DailyActivity = () => {
             tickLine={false}
             dataKey="weights"
             stroke="#9B9EAC"
-            domain={["dataMin -5", "dataMax +15"]}
+            domain={["dataMin -2", "dataMax +1"]}
             interval="preserveStartEnd" // Assure que les ticks sont bien répartis entre la valeur min et max
           />
           {/* 74  82 pour le 12 */}
           {/* 67  71 pour le 18 */}
           <YAxis
-            // tickCount={3}
             yAxisId="calories"
             type="number"
-            domain={["dataMin -160", "dataMax +15"]}
             hide
           />
           <Tooltip content={<TooltipWithKgAndKcal />} />
