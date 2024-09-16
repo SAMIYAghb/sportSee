@@ -3,12 +3,23 @@ import useSession from '../../hooks/useSession';
 import style from './AverageSessions.module.css'
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 // import { useContext } from 'react';
-import CustomToolTip from './CustumToolip';
+// import CustomToolTip from './CustumToolip';
+import CustomToolTip from './../CustomToolTip/CustomToolTip';
+import { PropTypes } from 'prop-types';
 
 
 const AverageSessions = () => {
-    const sessions =useSession();
-    // console.log(sessions)
+  const sessions = useSession();
+  // console.log(sessions)
+
+  const TooltipWithMinutes = ({ active, payload }) => {
+    const formatters = [(value) => `${value} min`];
+    return <CustomToolTip active={active} payload={payload} formatters={formatters} />;
+  };
+  TooltipWithMinutes.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.arrayOf(PropTypes.object),
+  }
   return (
     <div className={style.chartaverageSessions}>
       <p className={style.chartaverageTitle}>
@@ -16,7 +27,7 @@ const AverageSessions = () => {
         sessions
       </p>
       <ResponsiveContainer width="90%" height="100%">
-      <LineChart
+        <LineChart
           data={sessions}
           margin={{
             top: 0,
@@ -35,7 +46,8 @@ const AverageSessions = () => {
             padding={{ left: 10, right: 0 }}
             minTickGap={1}
           />
-          <Tooltip content={<CustomToolTip />} cursor={false} />
+          <Tooltip content={<TooltipWithMinutes tooltipClass={style.whiteTooltip} cursor={false} />} cursor={false} />
+          {/* <Tooltip content={<CustomToolTip />} cursor={false} /> */}
           <YAxis
             axisLine={false}
             tickLine={false}
@@ -58,36 +70,36 @@ const AverageSessions = () => {
             }}
           />
 
-<defs>
-						<linearGradient
-							id="colorUv"
-							x1="0%"
-							y1="0"
-							x2="100%"
-							y2="0"
-						>
-							<stop
-								offset="0%"
-								stopColor="rgba(255, 255, 255, 0.3)"
-							/>
-							<stop
-								offset="20%"
-								stopColor="rgba(255, 255, 255, 0.4)"
-							/>
-							<stop
-								offset="40%"
-								stopColor="rgba(255, 255, 255, 0.5)"
-							/>
-							<stop
-								offset="60%"
-								stopColor="rgba(255, 255, 255, 0.6)"
-							/>
-							<stop
-								offset="100%"
-								stopColor="rgba(255, 255, 255, 1)"
-							/>
-						</linearGradient>
-					</defs>
+          <defs>
+            <linearGradient
+              id="colorUv"
+              x1="0%"
+              y1="0"
+              x2="100%"
+              y2="0"
+            >
+              <stop
+                offset="0%"
+                stopColor="rgba(255, 255, 255, 0.3)"
+              />
+              <stop
+                offset="20%"
+                stopColor="rgba(255, 255, 255, 0.4)"
+              />
+              <stop
+                offset="40%"
+                stopColor="rgba(255, 255, 255, 0.5)"
+              />
+              <stop
+                offset="60%"
+                stopColor="rgba(255, 255, 255, 0.6)"
+              />
+              <stop
+                offset="100%"
+                stopColor="rgba(255, 255, 255, 1)"
+              />
+            </linearGradient>
+          </defs>
 
         </LineChart>
 
