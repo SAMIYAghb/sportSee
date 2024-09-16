@@ -80,8 +80,6 @@ const DailyActivity = () => {
             domain={["dataMin -2", "dataMax +1"]}
             interval="preserveStartEnd" // Assure que les ticks sont bien répartis entre la valeur min et max
           />
-          {/* 74  82 pour le 12 */}
-          {/* 67  71 pour le 18 */}
           <YAxis
             yAxisId="calories"
             type="number"

@@ -21,8 +21,8 @@ function App() {
         <Routes>
           <Route path="/" element={<BaseLayout />}>
             <Route index element={<Home />} />
-            <Route path="user/:userId" element={<Profil />} />
-            {/* <Route path="profil" element={<Profil />} /> */}
+            {/* <Route path="user/:userId" element={<Profil />} /> */}
+            <Route path="profil" element={<Profil />} />
             <Route path="setting" element={<Setting />} />
             <Route path="community" element={<Community />} />
             <Route path="*" element={<Error />} />
