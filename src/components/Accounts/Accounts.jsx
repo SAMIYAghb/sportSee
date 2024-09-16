@@ -1,16 +1,16 @@
 
-import useAccountsData from './../../hooks/useAccountsData';
+// import useAccountsData from './../../hooks/useAccountsData';
 
 
-const Accounts = () => {
-    const data = useAccountsData();
-    console.log(data)
+// const Accounts = () => {
+//     const data = useAccountsData();
+//     console.log(data)
 
-  return (
-    <div>
+//   return (
+//     <div>
       
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
-export default Accounts
+// export default Accounts

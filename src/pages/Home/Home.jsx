@@ -10,7 +10,8 @@ import DailyActivity from '../../components/DailyActivity/DailyActivity'
 import Hello from '../../components/Hello/Hello'
 import Performance from '../../components/Performance/Performance'
 import Score from '../../components/Score/Score'
-import useUserData from '../../hooks/useUserData'
+// import useUserData from '../../hooks/useUserData'
+import { useUserData } from './../../hooks/useUserData';
 
 
 const Home = () => {

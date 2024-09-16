@@ -1,5 +1,6 @@
 import { PolarAngleAxis, RadialBar, RadialBarChart, ResponsiveContainer } from 'recharts';
-import useScore from '../../hooks/useScore';
+// import useScore from '../../hooks/useScore';
+import { useScore } from '../../hooks/useUserData';
 import style from './Score.module.css';
 
 const Score = () => {

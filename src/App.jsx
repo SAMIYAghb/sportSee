@@ -6,23 +6,21 @@ import Error from './pages/Error/Error';
 import Setting from './pages/Setting/Setting';
 import Community from './pages/Community/Community';
 import { MockDataProvider } from './context/MockDataContext';
-// import { useState } from 'react';
-// import { MockDataContext } from './context/UserContext';
+
 
 
 function App() {
-  // Local state to manage the context values
-  // const [useMock, setUseMock] = useState(false);
+
 
   return (
-    // <MockDataContext.Provider value={{ useMock, setUseMock }}>
     <MockDataProvider>
       <Router>
         <Routes>
           <Route path="/" element={<BaseLayout />}>
-            <Route index element={<Home />} />
-            {/* <Route path="user/:userId" element={<Profil />} /> */}
-            <Route path="profil" element={<Profil />} />
+            <Route index element={<Home />} />    
+             {/* <Route path="/user/:id" element={<Home />} /> */}
+
+            <Route path="profil" element={<Profil />} />                
             <Route path="setting" element={<Setting />} />
             <Route path="community" element={<Community />} />
             <Route path="*" element={<Error />} />
@@ -30,7 +28,7 @@ function App() {
         </Routes>
       </Router>
       </MockDataProvider>
-    // </MockDataContext.Provider>
+
   )
 }
 

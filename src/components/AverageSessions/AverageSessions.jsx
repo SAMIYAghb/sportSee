@@ -1,11 +1,13 @@
 // import { UserContext } from '../../context/UserContext';
-import useSession from '../../hooks/useSession';
+
 import style from './AverageSessions.module.css'
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 // import { useContext } from 'react';
 // import CustomToolTip from './CustumToolip';
 import CustomToolTip from './../CustomToolTip/CustomToolTip';
 import { PropTypes } from 'prop-types';
+import useSession from '../../hooks/useSession';
+
 
 
 const AverageSessions = () => {
