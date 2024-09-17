@@ -2,9 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { MockDataContext } from "../context/MockDataContext";
 import { getUserDataFromMock } from "../service/mockUser";
 import { getUserDataFromApi } from "../service/apiUser";
+// import { useParams } from 'react-router-dom';
 
 export const useUserData = () => {
   const userId = 12;
+  // const { userId } = useParams();
   const { useMock } = useContext(MockDataContext);
   const [userData, setUserData] = useState(0);
 

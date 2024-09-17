@@ -5,7 +5,7 @@ import bicycle from '../../assets/picto-cycling.png'
 import barbell from '../../assets/picto-bodybuilding.png'
 import ToggleBtn from '../ToggleBtn/ToggleBtn'
 
-const Sidebar = () => {
+const Sidebar = ({ onToggle }) => {
   return (
     <div className={style.verticalNavigator}>
       
@@ -15,7 +15,7 @@ const Sidebar = () => {
         <img src={bicycle} alt="bicycle" className={style.icon}  />
         <img src={barbell} alt="barbell" className={style.icon}  />
 
-        <ToggleBtn/>
+        <ToggleBtn onToggle={onToggle} />{/* Pass the onToggle prop */}
       </div>
 
       <p className={style.copyright}>Copyright, SportSee 2020</p>

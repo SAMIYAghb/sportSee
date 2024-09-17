@@ -1,11 +1,14 @@
 import  { useState } from 'react';
 import styles from './ToggleBtn.module.css';
 
-const ToggleSwitch = () => {
+
+//The onToggle is passed from the Sidebar component, and the button toggles between user 12 and user 18.
+const ToggleBtn = ({ onToggle }) => {
   const [isOn, setIsOn] = useState(false);
 
   const toggleSwitch = () => {
     setIsOn(!isOn);
+    onToggle(!isOn ? 18 : 12); // Pass the userId to the onToggle function
   };
 
   return (
@@ -19,4 +22,4 @@ const ToggleSwitch = () => {
   );
 };
 
-export default ToggleSwitch;
+export default  ToggleBtn;

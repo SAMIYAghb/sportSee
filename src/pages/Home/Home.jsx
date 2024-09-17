@@ -12,10 +12,15 @@ import Performance from '../../components/Performance/Performance'
 import Score from '../../components/Score/Score'
 // import useUserData from '../../hooks/useUserData'
 import { useUserData } from './../../hooks/useUserData';
+import { useOutletContext } from 'react-router-dom';
 
 
-const Home = () => {
-  const useData = useUserData();
+//Using the useOutletContext hook to retrieve the userId from the context passed by BaseLayout.
+const Home = ( ) => {
+  // console.log(userId)
+  const { userId } = useOutletContext(); // Retrieve userId from context
+  // const useData = useUserData();
+  const useData = useUserData(userId);
   // console.log(useData.keyData);
   const values = useData?.keyData;
   // console.log(values);

@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { getUserPerformanceFromMock } from '../service/mockUser';
 import { getUserPerformanceFromApi } from '../service/apiUser';
 import { MockDataContext } from '../context/MockDataContext';
+// import { useParams } from 'react-router-dom';
 /**
  * 
  * @returns custom hook pour récupérer les performance de chaque utilisateur

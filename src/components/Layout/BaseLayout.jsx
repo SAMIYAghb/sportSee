@@ -2,15 +2,17 @@ import { Outlet } from 'react-router-dom';
 import '../../App.css'
 import Navbar from './../Navbar/Navbar';
 import Sidebar from './../Sidebar/Sidebar';
+import { useState } from 'react';
 
 const BaseLayout = () => {
+    const [userId, setUserId] = useState(12); // Default userId
     return (
         <>
             <div className='container'>
                 <Navbar />
-                <Sidebar />
+                <Sidebar  onToggle={setUserId}/>
                     <main>
-                        <Outlet />
+                        <Outlet context={{ userId }}/>
                     </main>
             </div>
         </>
@@ -18,3 +20,4 @@ const BaseLayout = () => {
 }
 
 export default BaseLayout
+ 

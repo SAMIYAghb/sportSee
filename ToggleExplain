@@ -1,0 +1,14 @@
+Explanation of Changes:
+BaseLayout:
+
+Passed the userId using Outlet's context prop to share userId with the Home component.
+Home:
+
+Used useOutletContext to access userId in Home and passed it to useUserData().
+ToggleBtn:
+
+onToggle was corrected to properly toggle between user 12 and 18, with state tracking.
+Sidebar:
+
+The onToggle prop is passed down to ToggleBtn, allowing user switching.
+This approach should correctly toggle between users and fetch the corresponding data based on the selected user.
