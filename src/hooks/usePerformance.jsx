@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { getUserPerformanceFromMock } from '../service/mockUser';
 import { getUserPerformanceFromApi } from '../service/apiUser';
 import { MockDataContext } from '../context/MockDataContext';
+import { useOutletContext } from 'react-router-dom';
 // import { useParams } from 'react-router-dom';
 /**
  * 
@@ -10,7 +11,8 @@ import { MockDataContext } from '../context/MockDataContext';
 
 const usePerformance = () => {
     // const { userId } = useParams();
-    const userId = 12;
+    // const userId = 12;
+    const { userId } = useOutletContext(); 
     const { useMock } = useContext(MockDataContext);
     const [performance, setPerformance] =  useState();
 

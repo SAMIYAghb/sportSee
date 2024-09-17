@@ -19,6 +19,7 @@ import { useOutletContext } from 'react-router-dom';
 const Home = ( ) => {
   // console.log(userId)
   const { userId } = useOutletContext(); // Retrieve userId from context
+  console.log(userId)
   // const useData = useUserData();
   const useData = useUserData(userId);
   // console.log(useData.keyData);

@@ -3,10 +3,12 @@ import { MockDataContext } from "../context/MockDataContext";
 import { getDailyActivityFromMock } from "../service/mockUser";
 import { getDailyActivityFromApi } from "../service/apiUser";
 // import { useParams } from 'react-router-dom';
+import { useOutletContext } from 'react-router-dom';
 
 const useDailyActivity = () => {
-    const userId = 12;
+    // const userId = 12;
     // const { userId } = useParams();
+    const { userId } = useOutletContext(); 
     const { useMock } = useContext(MockDataContext);
     const [dailyActivity, setDailyActivity] = useState();
     

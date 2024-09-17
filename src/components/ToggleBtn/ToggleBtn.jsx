@@ -1,5 +1,6 @@
 import  { useState } from 'react';
 import styles from './ToggleBtn.module.css';
+import { PropTypes } from 'prop-types';
 
 
 //The onToggle is passed from the Sidebar component, and the button toggles between user 12 and user 18.
@@ -21,5 +22,7 @@ const ToggleBtn = ({ onToggle }) => {
     </div>
   );
 };
-
+ToggleBtn.propTypes = {
+  onToggle: PropTypes.func.isRequired,
+};
 export default  ToggleBtn;

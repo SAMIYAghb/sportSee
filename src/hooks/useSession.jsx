@@ -3,11 +3,12 @@ import { MockDataContext } from "../context/MockDataContext";
 import { getUserAverageSessionFromMock } from "../service/mockUser";
 import { getUserAverageSessionFromApi } from "../service/apiUser";
 // import { useParams } from 'react-router-dom';
-
+import { useOutletContext } from 'react-router-dom';
 
 const useSession = () => {
-    const userId = 12;
+    // const userId = 12;
     // const { userId } = useParams();
+    const { userId } = useOutletContext(); 
     const { useMock } = useContext(MockDataContext);
     const [sessions, setSessions] = useState([]);
 
