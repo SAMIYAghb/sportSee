@@ -10,9 +10,9 @@ const BaseLayout = () => {
         <>
             <div className='container'>
                 <Navbar />
-                <Sidebar  onToggle={setUserId}/>
+                <Sidebar  onToggle={setUserId}/>{/* Sidebar ou ToggleBtn met à jour userId */}
                     <main>
-                        <Outlet context={{ userId }}/>
+                        <Outlet context={{ userId }}/>{/* Fournit userId au contexte d'Outlet */}
                     </main>
             </div>
         </>

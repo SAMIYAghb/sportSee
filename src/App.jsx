@@ -17,9 +17,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<BaseLayout />}>
-            {/* <Route index element={<Home />} />     */}
-             <Route path="/user/:id" element={<Home />} />
-
+            <Route path="/user/:id" element={<Home />} />
             <Route path="profil" element={<Profil />} />                
             <Route path="setting" element={<Setting />} />
             <Route path="community" element={<Community />} />

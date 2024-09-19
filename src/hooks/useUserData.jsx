@@ -37,7 +37,8 @@ export const useUserData = () => {
 
 export const useScore = () => {
   // const { userId } = useParams();
-  const userId = 12;
+  // const userId = 12;
+  const { userId } = useOutletContext(); 
   const { useMock } = useContext(MockDataContext);
   const [score, setScore] =  useState(0);
 

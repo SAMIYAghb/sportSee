@@ -16,10 +16,10 @@ import { useUserData } from './../../hooks/useUserData'
 
 //Using the useOutletContext hook to retrieve the userId from the context passed by BaseLayout.
 const Home = ( ) => {
-  // console.log(userId)
+
   const { userId } = useOutletContext(); // Retrieve userId from context
-  console.log(userId)
-  // const useData = useUserData();
+  // console.log(userId)
+
   const useData = useUserData(userId);
   // console.log(useData.keyData);
   const values = useData?.keyData;
