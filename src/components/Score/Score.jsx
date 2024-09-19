@@ -1,16 +1,29 @@
 import { PolarAngleAxis, RadialBar, RadialBarChart, ResponsiveContainer } from 'recharts';
 // import useScore from '../../hooks/useScore';
-import { useScore } from '../../hooks/useUserData';
+// import { useScore } from '../../hooks/useUserData';
 import style from './Score.module.css';
+import { useParams } from 'react-router-dom';
+import { useUserData } from './../../hooks/useUserData';
 
 const Score = () => {
-  
-  const score = useScore();
-  const scoreValue = score * 100;
+  // todayscore//12
+  // score //18
+    // Get user ID from route parameters
+
+  const id = useParams();
+    // Fetch user data based on user ID
+  const useData = useUserData(id );
+  // console.log(useData)
+
+    // Default userScore to 0 if data is invalid
+  const userScore = (useData?.todayScore || useData?.score || 0) * 100;
+  // console.log(userScore)
+
+
   // Transform the single number into the required data format
   const scoreData = [
     { name: 'Score',
-      value: scoreValue,
+      value: userScore ,
     }
   ];
 
@@ -46,7 +59,7 @@ const Score = () => {
             textAnchor="middle"
             className={style.scoreContainerScore}
           >
-            {scoreValue}%
+            {userScore}%
           </text>
           <text
             x="55%"
