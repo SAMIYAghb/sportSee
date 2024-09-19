@@ -1,18 +1,29 @@
 // import { UserContext } from '../../context/UserContext';
 
-import style from './AverageSessions.module.css'
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import style from './AverageSessions.module.css';
 // import { useContext } from 'react';
 // import CustomToolTip from './CustumToolip';
-import CustomToolTip from './../CustomToolTip/CustomToolTip';
 import { PropTypes } from 'prop-types';
 import useSession from '../../hooks/useSession';
+import CustomToolTip from './../CustomToolTip/CustomToolTip';
 
 
 
 const AverageSessions = () => {
   const sessions = useSession();
   // console.log(sessions)
+  // Trouver la valeur maximale
+// const maxSession = sessions.reduce((max, session) => (session.sessionLength > max.sessionLength ? session : max), sessions[0]);
+// console.log(maxSession)
+// console.log(maxSession.day)
+// console.log(maxSession.sessionLength)
+
+//  const maxDay = maxSession?.day;
+//  console.log(maxDay)
+//  const maxLength = maxSession?.sessionLength;
+//  console.log(maxLength)
+
 
   const TooltipWithMinutes = ({ active, payload }) => {
     const formatters = [(value) => `${value} min`];
@@ -56,7 +67,6 @@ const AverageSessions = () => {
           <Tooltip content={<TooltipWithMinutes 
           />} 
           cursor={false} />
-          {/* <Tooltip content={<CustomToolTip />} cursor={false} /> */}
           <YAxis
             axisLine={false}
             tickLine={false}
@@ -108,11 +118,7 @@ const AverageSessions = () => {
               />
             </linearGradient>
           </defs>
-
         </LineChart>
-
-
-
       </ResponsiveContainer>
     </div>
   )
