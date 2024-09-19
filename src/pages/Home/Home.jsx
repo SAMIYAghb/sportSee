@@ -1,3 +1,4 @@
+import { useOutletContext } from 'react-router-dom'
 import '../../App.css'
 import calorie from '../../assets/icon-calorie.png'
 import glucide from '../../assets/icon-carbohydrate.png'
@@ -9,22 +10,21 @@ import DailyActivity from '../../components/DailyActivity/DailyActivity'
 import Hello from '../../components/Hello/Hello'
 import Performance from '../../components/Performance/Performance'
 import Score from '../../components/Score/Score'
-import style from './Home.module.css'
-import { useOutletContext } from 'react-router-dom'
 import { useUserData } from './../../hooks/useUserData'
+import style from './Home.module.css'
 
 
 //Using the useOutletContext hook to retrieve the userId from the context passed by BaseLayout.
 const Home = ( ) => {
-
   const { userId } = useOutletContext(); // Retrieve userId from context
   // console.log(userId)
-
+  
   const useData = useUserData(userId);
   // console.log(useData.keyData);
   const values = useData?.keyData;
   // console.log(values);
 
+  
   // Check if values is defined before rendering
   if (!values) {
     return <div>Loading...</div>; 

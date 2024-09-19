@@ -11,6 +11,7 @@ const ToggleBtn = ({ onToggle }) => {
   
   const toggleSwitch = () => {
     const newUserId = !isOn ? 18 : 12;
+    
     setIsOn(!isOn);
     // onToggle(!isOn ? 18 : 12); // Pass the userId to the onToggle function
     onToggle(newUserId); // Passe l'`userId` à la fonction `onToggle`

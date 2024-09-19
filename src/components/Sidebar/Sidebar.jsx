@@ -4,13 +4,11 @@ import swin from '../../assets/picto-swimming.png'
 import bicycle from '../../assets/picto-cycling.png'
 import barbell from '../../assets/picto-bodybuilding.png'
 import ToggleBtn from '../ToggleBtn/ToggleBtn'
+import { PropTypes } from 'prop-types';
 
 
 const Sidebar = ({ onToggle }) => {
 
-  // const { useMock, setUseMock } = useContext(MockDataContext);
-  // const users = useAccountsData();
-  // console.log(users)
   return (
     <div className={style.verticalNavigator}>
       
@@ -29,5 +27,7 @@ const Sidebar = ({ onToggle }) => {
     </div>
   )
 }
-
+Sidebar.propTypes = {
+  onToggle: PropTypes.func.isRequired,
+};
 export default Sidebar
