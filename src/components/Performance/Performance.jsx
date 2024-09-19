@@ -4,7 +4,6 @@ import usePerformance from '../../hooks/usePerformance';
 
 const Performance = () => {
   const performance = usePerformance();
-
   // const kinds = performance?.kind;
   const data = performance?.data;
   // console.log(performance?.kind, performance?.data,'from performance')
@@ -38,11 +37,10 @@ const transformedData = data?.map(item => {
         <RadarChart cx="50%" cy="50%" outerRadius="70%"
           data={transformedData}>
 
-          <PolarGrid />
+          <PolarGrid gridType="polygon" radialLines={false}/>
 
           <PolarAngleAxis
             dataKey="kind"
-
             tickLine={false}
             axisLine={false}
             tickSize={10}
