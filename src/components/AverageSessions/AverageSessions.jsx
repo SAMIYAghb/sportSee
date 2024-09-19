@@ -1,9 +1,5 @@
-// import { UserContext } from '../../context/UserContext';
-
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import style from './AverageSessions.module.css';
-// import { useContext } from 'react';
-// import CustomToolTip from './CustumToolip';
 import { PropTypes } from 'prop-types';
 import useSession from '../../hooks/useSession';
 import CustomToolTip from './../CustomToolTip/CustomToolTip';
@@ -11,7 +7,7 @@ import CustomToolTip from './../CustomToolTip/CustomToolTip';
 
 
 const AverageSessions = () => {
-  const sessions = useSession();
+  const {sessions, error} = useSession();
   // console.log(sessions)
   // Trouver la valeur maximale
 // const maxSession = sessions.reduce((max, session) => (session.sessionLength > max.sessionLength ? session : max), sessions[0]);
@@ -32,6 +28,12 @@ const AverageSessions = () => {
   TooltipWithMinutes.propTypes = {
     active: PropTypes.bool,
     payload: PropTypes.arrayOf(PropTypes.object),
+  }
+  if (!sessions) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>Error: {error}</div>;
   }
   return (
     <div className={style.chartaverageSessions}>

@@ -6,6 +6,7 @@ import Error from './pages/Error/Error';
 import Setting from './pages/Setting/Setting';
 import Community from './pages/Community/Community';
 import { MockDataProvider } from './context/MockDataContext';
+import Login from './pages/Login/Login';
 
 
 
@@ -17,8 +18,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<BaseLayout />}>
+
             <Route path="/user/:id" element={<Home />} />
             <Route path="profil" element={<Profil />} />                
+            <Route path="login" element={<Login />} />                
             <Route path="setting" element={<Setting />} />
             <Route path="community" element={<Community />} />
             <Route path="*" element={<Error />} />

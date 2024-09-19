@@ -9,7 +9,7 @@ import CustomToolTip from '../CustomToolTip/CustomToolTip';
 
 const DailyActivity = () => {
 
-  const dailyActivity = useDailyActivity();
+  const { dailyActivity, error } = useDailyActivity();
   // console.log(dailyActivity.sessions)
 
 
@@ -36,6 +36,10 @@ const DailyActivity = () => {
   if (!dailyActivity) {
     return <div>Loading...</div>;
   }
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <div className={style.dailyActivity}>
       <div className={style.titles}>
@@ -66,7 +70,7 @@ const DailyActivity = () => {
             tickLine={false}
             tickMargin={20}
             tickCount={7}
-            
+
           />
           <YAxis
             tickCount={3}

@@ -3,7 +3,7 @@ import style from './Performance.module.css';
 import usePerformance from '../../hooks/usePerformance';
 
 const Performance = () => {
-  const performance = usePerformance();
+  const { performance, error } = usePerformance();
   // const kinds = performance?.kind;
   const data = performance?.data;
   // console.log(performance?.kind, performance?.data,'from performance')
@@ -15,20 +15,23 @@ const Performance = () => {
     4: 'force',
     5: 'vitesse',
     6: 'intensité'
-  }; 
-// Map the kind description to the data
-const transformedData = data?.map(item => {
-  return {
-    ...item,
-    // kind: kinds?.[item.kind] // Replace numeric kind with description
-    kind: kindTranslations[item.kind] 
   };
-})?.reverse() || [];// Fallback to empty array if data is undefined
+  // Map the kind description to the data
+  const transformedData = data?.map(item => {
+    return {
+      ...item,
+      // kind: kinds?.[item.kind] // Replace numeric kind with description
+      kind: kindTranslations[item.kind]
+    };
+  })?.reverse() || [];// Fallback to empty array if data is undefined
 
-// console.log(transformedData);
- 
+  // console.log(transformedData);
+
   if (!performance) {
     return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>Error: {error}</div>;
   }
   return (
 
@@ -37,7 +40,7 @@ const transformedData = data?.map(item => {
         <RadarChart cx="50%" cy="50%" outerRadius="70%"
           data={transformedData}>
 
-          <PolarGrid gridType="polygon" radialLines={false}/>
+          <PolarGrid gridType="polygon" radialLines={false} />
 
           <PolarAngleAxis
             dataKey="kind"

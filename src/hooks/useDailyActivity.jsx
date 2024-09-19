@@ -8,9 +8,12 @@ const useDailyActivity = () => {
     const { userId } = useOutletContext(); 
     const { useMock } = useContext(MockDataContext);
     const [dailyActivity, setDailyActivity] = useState();
-    
+    const [error, setError] = useState(null);
+
+
     useEffect(() => {
         const fetchData = async () => {
+            try {
             let data;
             if (useMock) {
                 data = getDailyActivityFromMock(userId);
@@ -20,10 +23,13 @@ const useDailyActivity = () => {
                 // console.log(data)
             }
             setDailyActivity(data);
+        } catch (err) {
+            setError(err.message || "An error occurred while fetching data.");
+        }
         };
         // console.log(performance);
         fetchData();
     }, [useMock, userId]);
-    return dailyActivity;
+    return { dailyActivity, error };
 }
 export default useDailyActivity
