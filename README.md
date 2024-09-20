@@ -53,7 +53,7 @@ npm i recharts or yarn add recharts
 - Prop-types: ^15.8.1
 npm i prop-types or yarn add prop-types
 
-- Procédure d'installation :
+# Procédure d'installation :
 Cloner le repository:
 git clone https://github.com/SAMIYAghb/sportSee
 
