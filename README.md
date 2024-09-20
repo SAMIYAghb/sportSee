@@ -46,11 +46,11 @@ Mon rôle a été de développer le front-end de cette page de profil en utilisa
 Git
 Node pour les commandes npm ou Yarn pour les commandes yarn
 - Dépendances :
-React: ^18
-React-router-dom: ^6.3.0
-Recharts: ^2.1.9
+- React: ^18
+- React-router-dom: ^6.3.0
+- Recharts: ^2.1.9
 npm i recharts or yarn add recharts
-Prop-types: ^15.8.1
+- Prop-types: ^15.8.1
 npm i prop-types or yarn add prop-types
 
 - Procédure d'installation :
