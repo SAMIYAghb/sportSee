@@ -14,10 +14,10 @@ SportSee est un projet réalisé dans le cadre du programme de formation Dévelo
 Intégrez des graphiques et des diagrammes avec React pour un tableau de bord d'analytics de sport. Vous Utilisez une API pour récupérer les données.
 
 # Compétences évaluées :
-Assurer la qualité des données d'une application 👨‍💻
-Développer des éléments graphiques avancés à l'aide de bibliothèques JavaScript 📈
-Interagir avec un service Web 🌐
-Produire de la documentation technique pour une application 📝
+- Assurer la qualité des données d'une application 👨‍💻
+- Développer des éléments graphiques avancés à l'aide de bibliothèques JavaScript 📈
+- Interagir avec un service Web 🌐
+- Produire de la documentation technique pour une application 📝
 
 # Situation du projet :
 Développeur chez “SportSee”, une startup dédiée au coaching sportif.
