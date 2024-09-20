@@ -1,29 +1,30 @@
-import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import style from './AverageSessions.module.css';
 import { PropTypes } from 'prop-types';
+import { Line, LineChart, Rectangle, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import useSession from '../../hooks/useSession';
 import CustomToolTip from './../CustomToolTip/CustomToolTip';
+import style from './AverageSessions.module.css';
 
 
 
 const AverageSessions = () => {
-  const {sessions, error} = useSession();
+  const { sessions, error } = useSession();
   // console.log(sessions)
   // Trouver la valeur maximale
-// const maxSession = sessions.reduce((max, session) => (session.sessionLength > max.sessionLength ? session : max), sessions[0]);
-// console.log(maxSession)
-// console.log(maxSession.day)
-// console.log(maxSession.sessionLength)
+  const maxSession = sessions.reduce((max, session) => (session.sessionLength > max.sessionLength ? session : max), sessions[0]);
+  // console.log(maxSession)
 
-//  const maxDay = maxSession?.day;
-//  console.log(maxDay)
-//  const maxLength = maxSession?.sessionLength;
-//  console.log(maxLength)
+  const maxDay = maxSession?.day;
+  //  console.log(maxDay)
 
-
+  const maxLength = maxSession?.sessionLength;
+  // Trouver l'index de la session avec la longueur maximale
+  const maxDayIndex = sessions.findIndex((session) => {
+    return session.day === maxDay && session.sessionLength === maxLength;
+  });
+  
   const TooltipWithMinutes = ({ active, payload }) => {
     const formatters = [(value) => `${value} min`];
-    return <CustomToolTip active={active} payload={payload} formatters={formatters} tooltipClass={style.whiteTooltip}/>;
+    return <CustomToolTip active={active} payload={payload} formatters={formatters} tooltipClass={style.whiteTooltip} />;
   };
   TooltipWithMinutes.propTypes = {
     active: PropTypes.bool,
@@ -51,31 +52,39 @@ const AverageSessions = () => {
             bottom: 50,
           }}
         >
+        
           <XAxis
             dataKey="day"
             axisLine={false}
             tickLine={false}
             tickMargin={30}
             tickCount={7}
-            tick={{ 
+            tick={{
               fill: "#fff",
-              opacity: "0.4", 
-              fontSize: 10 }}
-            padding={{ 
-              left: 10, 
-              right: 0 }}
+              opacity: "0.4",
+              fontSize: 10
+            }}
+            padding={{
+              left: 10,
+              right: 0
+            }}
             minTickGap={1}
           />
-          <Tooltip content={<TooltipWithMinutes 
-          />} 
-          cursor={false} />
+          <Tooltip content={<TooltipWithMinutes />} cursor={false} />
           <YAxis
             axisLine={false}
             tickLine={false}
             type="number"
             domain={["dataMin", "dataMax + 10"]}
-            hide={true} 
+            hide={true}
           />
+
+          <ReferenceLine
+            x={maxDayIndex}  // Utilisation du jour correspondant à la session avec la longueur maximale
+            stroke="#ffffff"
+            strokeDasharray="3 3"  // Optionnel, rend la ligne en pointillés
+          />
+
           <Line
             type="natural"
             dataKey="sessionLength"
@@ -98,30 +107,18 @@ const AverageSessions = () => {
               x2="100%"
               y2="0"
             >
-              <stop
-                offset="0%"
-                stopColor="rgba(255, 255, 255, 0.3)"
-              />
-              <stop
-                offset="20%"
-                stopColor="rgba(255, 255, 255, 0.4)"
-              />
-              <stop
-                offset="40%"
-                stopColor="rgba(255, 255, 255, 0.5)"
-              />
-              <stop
-                offset="60%"
-                stopColor="rgba(255, 255, 255, 0.6)"
-              />
-              <stop
-                offset="100%"
-                stopColor="rgba(255, 255, 255, 1)"
-              />
+              <stop offset="0%" stopColor="rgba(255, 255, 255, 0.3)" />
+              <stop offset="20%" stopColor="rgba(255, 255, 255, 0.4)" />
+              <stop offset="40%" stopColor="rgba(255, 255, 255, 0.5)" />
+              <stop offset="60%" stopColor="rgba(255, 255, 255, 0.6)" />
+              <stop offset="100%" stopColor="rgba(255, 255, 255, 1)" />
             </linearGradient>
           </defs>
+
+
         </LineChart>
       </ResponsiveContainer>
+
     </div>
   )
 }
