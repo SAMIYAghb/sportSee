@@ -18,17 +18,17 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<BaseLayout />}>
-
             <Route path="/user/:id" element={<Home />} />
             <Route path="profil" element={<Profil />} />                
             <Route path="login" element={<Login />} />                
             <Route path="setting" element={<Setting />} />
             <Route path="community" element={<Community />} />
             <Route path="*" element={<Error />} />
+            <Route path="/error" element={<Error />} />
           </Route>
         </Routes>
       </Router>
-      </MockDataProvider>
+    </MockDataProvider>
 
   )
 }
