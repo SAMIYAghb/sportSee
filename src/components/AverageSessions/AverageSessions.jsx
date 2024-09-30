@@ -1,5 +1,5 @@
 import { PropTypes } from 'prop-types';
-import { Line, LineChart, Rectangle, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import useSession from '../../hooks/useSession';
 import CustomToolTip from './../CustomToolTip/CustomToolTip';
 import style from './AverageSessions.module.css';
@@ -10,17 +10,17 @@ const AverageSessions = () => {
   const { sessions, error } = useSession();
   // console.log(sessions)
   // Trouver la valeur maximale
-  const maxSession = sessions.reduce((max, session) => (session.sessionLength > max.sessionLength ? session : max), sessions[0]);
+  // const maxSession = sessions.reduce((max, session) => (session.sessionLength > max.sessionLength ? session : max), sessions[0]);
   // console.log(maxSession)
 
-  const maxDay = maxSession?.day;
+  // const maxDay = maxSession?.day;
   //  console.log(maxDay)
 
-  const maxLength = maxSession?.sessionLength;
+  // const maxLength = maxSession?.sessionLength;
   // Trouver l'index de la session avec la longueur maximale
-  const maxDayIndex = sessions.findIndex((session) => {
-    return session.day === maxDay && session.sessionLength === maxLength;
-  });
+  // const maxDayIndex = sessions.findIndex((session) => {
+  //   return session.day === maxDay && session.sessionLength === maxLength;
+  // });
   
   const TooltipWithMinutes = ({ active, payload }) => {
     const formatters = [(value) => `${value} min`];
@@ -79,11 +79,11 @@ const AverageSessions = () => {
             hide={true}
           />
 
-          <ReferenceLine
+          {/* <ReferenceLine
             x={maxDayIndex}  // Utilisation du jour correspondant à la session avec la longueur maximale
             stroke="#ffffff"
             strokeDasharray="3 3"  // Optionnel, rend la ligne en pointillés
-          />
+          /> */}
 
           <Line
             type="natural"
