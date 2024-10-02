@@ -1,5 +1,6 @@
 import axios from "axios";
 import { transformPerformanceData } from "./transformPerformanceData";
+import { transformDailyActivityData } from "./transformDailyActivityData";
 
 
 export const getUserDataFromApi = async (userId) => {
@@ -49,7 +50,8 @@ export const getUserDataFromApi = async (userId) => {
       // console.log(response.data)
       // console.log(response.data.data)
 
-      return response.data.data;
+      // return response.data.data;
+      return transformDailyActivityData(response.data.data.sessions);
     } catch (error) {
       console.error(error);
     }

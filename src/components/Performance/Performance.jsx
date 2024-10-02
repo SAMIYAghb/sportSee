@@ -1,6 +1,5 @@
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from 'recharts';
 import style from './Performance.module.css';
-// import usePerformance from '../../hooks/usePerformance';
 import PropTypes from 'prop-types';
 
 const Performance = ({ data }) => {

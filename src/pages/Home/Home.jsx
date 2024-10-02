@@ -13,6 +13,7 @@ import Score from '../../components/Score/Score'
 import { useUserData } from './../../hooks/useUserData'
 import style from './Home.module.css'
 import usePerformance from '../../hooks/usePerformance'
+import useDailyActivity from '../../hooks/useDailyActivity'
 
 
 //Using the useOutletContext hook to retrieve the userId from the context passed by BaseLayout.
@@ -25,16 +26,18 @@ const Home = ( ) => {
   const values = useData?.keyData;
   // console.log(values);
 
-  const { performance, error } = usePerformance();
+  const { performance, error: performanceError } = usePerformance();
   const data = performance?.data || []; // Fallback to empty array if data is undefined
+
+  const { dailyActivity, error: dailyActivityError } = useDailyActivity();
   
   // Check if values is defined before rendering
-  if (!values || !performance) {
+  if (!values || !performance || !dailyActivity) {
     return <div>Loading...</div>; 
   }
  
-  if (error) {
-    return <div>Error: {error}</div>;
+  if ( performanceError || dailyActivityError) {
+    return <div>Error: {performanceError || dailyActivityError}</div>;
   }
   return (
     <div>
@@ -44,11 +47,11 @@ const Home = ( ) => {
           <main>
             <div className={style.left}>
               <div className={style.rectangleeChart}>
-                <DailyActivity />
+                <DailyActivity dailyActivity={dailyActivity} />
               </div>
               <div className={style.squareCharts}>
                 <AverageSessions />
-                <Performance performance={performance} data={data} error={error} />
+                <Performance performance={performance} data={data} />
                 <Score />
               </div>
             </div> 

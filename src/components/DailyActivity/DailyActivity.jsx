@@ -1,25 +1,17 @@
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import style from './DailyActivity.module.css';
-import useDailyActivity from './../../hooks/useDailyActivity';
 import { PropTypes } from 'prop-types';
 import CustomToolTip from '../CustomToolTip/CustomToolTip';
 
 
-
-
-const DailyActivity = () => {
-
-  const { dailyActivity, error } = useDailyActivity();
-  // console.log(dailyActivity.sessions)
-
-
+const DailyActivity = ({dailyActivity}) => {
   // Transformez les données
-  const transformedData = dailyActivity?.sessions?.map((session, index) => ({
-    // days: session?.day,
-    day: index + 1,
-    weights: session?.kilogram,
-    calories: session?.calories
-  }));
+  // const transformedData = dailyActivity?.sessions?.map((session, index) => ({
+  //   // days: session?.day,
+  //   day: index + 1,
+  //   weights: session?.kilogram,
+  //   calories: session?.calories
+  // }));
 
   const TooltipWithKgAndKcal = ({ active, payload }) => {
     const formatters = [
@@ -32,12 +24,6 @@ const DailyActivity = () => {
   TooltipWithKgAndKcal.propTypes = {
     active: PropTypes.bool,
     payload: PropTypes.arrayOf(PropTypes.object),
-  }
-  if (!dailyActivity) {
-    return <div>Loading...</div>;
-  }
-  if (error) {
-    return <div>Error: {error}</div>;
   }
 
   return (
@@ -52,7 +38,7 @@ const DailyActivity = () => {
 
       <ResponsiveContainer width="100%" height="90%">
         <BarChart
-          data={transformedData}
+          data={dailyActivity}
           barGap={8}
           barSize={7}
           margin={{
@@ -113,5 +99,7 @@ const DailyActivity = () => {
   )
 }
 
-
+DailyActivity.propTypes = {
+  dailyActivity: PropTypes.array
+};
 export default DailyActivity

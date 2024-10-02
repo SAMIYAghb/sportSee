@@ -4,6 +4,7 @@ import {
   userSessions,
   userActivity,
 } from "./../data/mockApi";
+import { transformDailyActivityData } from "./transformDailyActivityData";
 import { transformPerformanceData } from "./transformPerformanceData";
 
 /**
@@ -72,7 +73,8 @@ export const getDailyActivityFromMock = (userId) => {
 
     if (mockActivity) {
       // console.log(mockSession)
-      return mockActivity.sessions;
+      // return mockActivity.sessions;
+      return transformDailyActivityData(mockActivity.sessions);
     } else {
       throw new Error("Utilisateur non trouvé dans les données mock");
     }
