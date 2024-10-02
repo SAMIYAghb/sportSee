@@ -1,13 +1,13 @@
 import { PropTypes } from 'prop-types';
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import useSession from '../../hooks/useSession';
+// import useSession from '../../hooks/useSession';
 import CustomToolTip from './../CustomToolTip/CustomToolTip';
 import style from './AverageSessions.module.css';
 
 
 
-const AverageSessions = () => {
-  const { sessions, error } = useSession();
+const AverageSessions = ({sessions}) => {
+  // const { sessions, error } = useSession();
   // console.log(sessions)
   // Trouver la valeur maximale
   // const maxSession = sessions.reduce((max, session) => (session.sessionLength > max.sessionLength ? session : max), sessions[0]);
@@ -30,12 +30,7 @@ const AverageSessions = () => {
     active: PropTypes.bool,
     payload: PropTypes.arrayOf(PropTypes.object),
   }
-  if (!sessions) {
-    return <div>Loading...</div>;
-  }
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+  
   return (
     <div className={style.chartaverageSessions}>
       <p className={style.chartaverageTitle}>
@@ -122,5 +117,7 @@ const AverageSessions = () => {
     </div>
   )
 }
-
+AverageSessions.propTypes = {
+  sessions: PropTypes.array,
+};
 export default AverageSessions

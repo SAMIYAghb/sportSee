@@ -30,6 +30,7 @@ export const useUserData = () => {
         // console.log(data.userInfos.firstName)
       }
 // console.log(userData)
+
       setUserData(data)
     } catch (err) {
       setError(err); // Catch and set the error
