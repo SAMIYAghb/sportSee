@@ -34,5 +34,10 @@ export default [
         { allowConstantExport: true },
       ],
     },
+    env: {
+      browser: true,
+      es2021: true,
+      node: true, // Cela permet d'utiliser des variables comme process
+    },
   },
 ]

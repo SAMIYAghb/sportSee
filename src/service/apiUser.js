@@ -3,10 +3,11 @@ import { transformPerformanceData } from "./transformPerformanceData";
 import { transformDailyActivityData } from "./transformDailyActivityData";
 import { transformeUserData } from "./transformeUserData";
 
-
+// Accédez à l'URL de l'API depuis les variables d'environnement
+const apiUrl = import.meta.env.VITE_API_URL; // Utilisez import.meta.env pour accéder aux variables d'environnement
 export const getUserDataFromApi = async (userId) => {
     try {
-      const response = await axios.get(`http://localhost:3000/user/${userId}`);
+      const response = await axios.get(`${apiUrl}/user/${userId}`);
       // console.log(response)
       // console.log(response.data.data)
       return transformeUserData(response.data.data);
@@ -18,7 +19,7 @@ export const getUserDataFromApi = async (userId) => {
 
   export const getUserPerformanceFromApi = async (userId) => {
     try {
-      const response = await axios.get(`http://localhost:3000/user/${userId}/performance`);
+      const response = await axios.get(`${apiUrl}/user/${userId}/performance`);
       // console.log(response)
       // console.log(response.data.data)
       // console.log(response.data.data.data)
@@ -36,7 +37,7 @@ export const getUserDataFromApi = async (userId) => {
 
   export const getUserAverageSessionFromApi = async (userId) => {
     try {
-      const response = await axios.get(`http://localhost:3000/user/${userId}/average-sessions`);
+      const response = await axios.get(`${apiUrl}/user/${userId}/average-sessions`);
       // console.log(response.data)
       // console.log(response.data.data)
 
@@ -48,7 +49,7 @@ export const getUserDataFromApi = async (userId) => {
 
   export const getDailyActivityFromApi = async (userId) => {
     try {
-      const response = await axios.get(`http://localhost:3000/user/${userId}/activity`);
+      const response = await axios.get(`${apiUrl}/user/${userId}/activity`);
       // console.log(response.data)
       // console.log(response.data.data)
 

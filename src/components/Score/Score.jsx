@@ -72,7 +72,7 @@ const Score = ({ userScore, scoreData}) => {
 }
 Score.propTypes = {
   userScore: PropTypes.number,
-  userScscoreDatre: PropTypes.object,
+  scoreData: PropTypes.array,
 };
 export default Score
 
