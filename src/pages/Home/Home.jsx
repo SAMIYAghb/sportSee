@@ -12,6 +12,7 @@ import Performance from '../../components/Performance/Performance'
 import Score from '../../components/Score/Score'
 import { useUserData } from './../../hooks/useUserData'
 import style from './Home.module.css'
+import usePerformance from '../../hooks/usePerformance'
 
 
 //Using the useOutletContext hook to retrieve the userId from the context passed by BaseLayout.
@@ -24,12 +25,17 @@ const Home = ( ) => {
   const values = useData?.keyData;
   // console.log(values);
 
+  const { performance, error } = usePerformance();
+  const data = performance?.data || []; // Fallback to empty array if data is undefined
   
   // Check if values is defined before rendering
-  if (!values) {
+  if (!values || !performance) {
     return <div>Loading...</div>; 
   }
-
+ 
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
   return (
     <div>
       <div className={style.mainContent}>
@@ -42,7 +48,7 @@ const Home = ( ) => {
               </div>
               <div className={style.squareCharts}>
                 <AverageSessions />
-                <Performance />
+                <Performance performance={performance} data={data} error={error} />
                 <Score />
               </div>
             </div> 

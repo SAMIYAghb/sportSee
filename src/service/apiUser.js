@@ -1,4 +1,5 @@
 import axios from "axios";
+import { transformPerformanceData } from "./transformPerformanceData";
 
 
 export const getUserDataFromApi = async (userId) => {
@@ -19,7 +20,12 @@ export const getUserDataFromApi = async (userId) => {
       // console.log(response.data.data)
       // console.log(response.data.data.data)
       // console.log(response.data.data.kind)
-      return response.data.data;
+      if (response.data?.data) {
+        const transformedData = transformPerformanceData(response.data.data.data);
+        return { ...response.data.data, data: transformedData };
+      } else {
+        throw new Error("Utilisateur non trouvé dans les données API");
+      }
     } catch (error) {
       console.error(error);
     }
