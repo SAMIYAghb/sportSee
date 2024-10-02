@@ -1,7 +1,8 @@
 .dailyActivity{
     background: #FBFBFB;
     width: 835px;
-    height: 320px;
+    height: 280px;
+    /* height: 320px; */
     border-radius: 10px;
     padding: 1.5rem;
 }

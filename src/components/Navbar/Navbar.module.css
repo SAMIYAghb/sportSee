@@ -5,13 +5,16 @@ header{
     justify-content: space-between;
     padding:1rem 2rem;
     background: #000;
-    height: 91px;
+    height: 69px;
+    /* height: 91px; */
     position: fixed;
     z-index: 2;
     width: 100%;
 }
 .logo{
-    width: 57.2px;
+    width: 50px;
+    /* width: 57.2px; */
+    height: 2.5rem;
 }
 span{
     font-size: 24px;

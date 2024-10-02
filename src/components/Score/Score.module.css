@@ -1,7 +1,8 @@
 .score{
     background: #FBFBFB;
     width: 258px;
-    height: 263px;
+    /* height: 263px; */
+    height: 240px;
     border-radius: 10px;
     padding: 1rem;
     /*  */

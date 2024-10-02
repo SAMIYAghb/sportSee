@@ -4,6 +4,7 @@ import usePerformance from '../../hooks/usePerformance';
 
 const Performance = () => {
   const { performance, error } = usePerformance();
+  // console.log(performance)
   // const kinds = performance?.kind;
   const data = performance?.data;
   // console.log(performance?.kind, performance?.data,'from performance')
